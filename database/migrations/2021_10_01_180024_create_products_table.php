@@ -18,7 +18,6 @@ class CreateProductsTable extends Migration
             $table->string('title');
             $table->string('description');
             $table->string('price');
-            $table->enum('price', ['KAVLING', 'RUMAH']);
             $table->timestamps();
         });
     }
