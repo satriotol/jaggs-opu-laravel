@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\Benefit\CreateBenefitRequest;
+use App\Http\Requests\Benefit\UpdateBenefitRequest;
 use App\Models\Benefit;
 use Illuminate\Http\Request;
 
@@ -76,8 +77,17 @@ class BenefitController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdateBenefitRequest $request, Benefit $benefit)
     {
+        $data = $request->only(['description', 'title']);
+        if ($request->hasFile('image')) {
+            $image = $request->image->store('image', 'public');
+            $benefit->deleteImage();
+            $data['image'] = $image;
+        };
+        $benefit->update($data);
+        session()->flash('success');
+        return redirect(route('benefits.index'));
     }
 
     /**
