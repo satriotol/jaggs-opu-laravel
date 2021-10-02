@@ -35,6 +35,9 @@
                             <label>Image</label>
                             <input type="file" name="image" class="form-control" accept="image/*">
                         </div>
+                        @isset($benefit)
+                        <img src="{{$benefit->image}}" style="height: 100px" alt="">
+                        @endisset
                         <div class="text-right">
                             <input type="submit" class="btn btn-primary" value="Submit">
                         </div>

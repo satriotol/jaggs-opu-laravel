@@ -53,9 +53,9 @@ class BenefitController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($benefit)
     {
-        //
+        return view('benefit.create', compact('benefit'));
     }
 
     /**
@@ -64,9 +64,9 @@ class BenefitController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Benefit $benefit)
     {
-        //
+        return view('benefit.create', compact('benefit'));
     }
 
     /**
@@ -78,7 +78,6 @@ class BenefitController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
     }
 
     /**
