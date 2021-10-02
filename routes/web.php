@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\BenefitController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,7 +17,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware(['auth'])->group(function () {
     Route::resources([
-        'abouts' => AboutController::class,
+        'abouts'    => AboutController::class,
+        'benefits'  => BenefitController::class,
     ]);
 });
 

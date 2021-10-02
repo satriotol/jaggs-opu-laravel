@@ -14,6 +14,12 @@
                     <span>About</span>
                 </a>
             </li>
+            <li class="{{Request::routeIs('benefits.*') ? 'active' : ''}}">
+                <a class="nav-link " href=" {{route('benefits.index')}}">
+                    <i class="far fa-square"></i>
+                    <span>Benefit</span>
+                </a>
+            </li>
         </ul>
     </aside>
 </div>
