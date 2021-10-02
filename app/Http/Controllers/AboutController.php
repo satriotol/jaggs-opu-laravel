@@ -40,6 +40,7 @@ class AboutController extends Controller
         $data = $request->all();
         $about = About::find(1);
         $about->update($data);
+        session()->flash('success');
         return back();
     }
 
