@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSitePlansTable extends Migration
+class CreateWhatsappsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,10 @@ class CreateSitePlansTable extends Migration
      */
     public function up()
     {
-        Schema::create('site_plans', function (Blueprint $table) {
+        Schema::create('whatsapps', function (Blueprint $table) {
             $table->id();
-            $table->string('image');
+            $table->string('phone_number');
+            $table->string('message');
             $table->timestamps();
         });
     }
@@ -27,6 +28,6 @@ class CreateSitePlansTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('site_plans');
+        Schema::dropIfExists('whatsapps');
     }
 }
