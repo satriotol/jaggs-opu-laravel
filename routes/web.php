@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\BenefitController;
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,6 +20,7 @@ Route::middleware(['auth'])->group(function () {
     Route::resources([
         'abouts'    => AboutController::class,
         'benefits'  => BenefitController::class,
+        'products'  => ProductController::class,
     ]);
 });
 
