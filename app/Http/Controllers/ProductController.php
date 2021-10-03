@@ -39,10 +39,6 @@ class ProductController extends Controller
     public function store(CreateProductRequest $request)
     {
         $data = $request->all();
-        // if ($request->hasFile('image')) {
-        //     $image = $request->image->store('image', 'public');
-        //     $data['image'] = $image;
-        // };
         $product = Product::create($data);
         foreach ($request->file('image') as $image) {
             $image_upload = $image->store('image', 'public');
@@ -74,9 +70,9 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Product $product)
     {
-        //
+        return view('product.create', compact('product'));
     }
 
     /**
@@ -86,9 +82,12 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(CreateProductRequest $request, Product $product)
     {
-        //
+        $data = $request->all();
+        $product->update($data);
+        session()->flash('success');
+        return redirect(route('products.index'));
     }
 
     /**

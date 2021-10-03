@@ -36,10 +36,12 @@
                             <textarea name="description" class="form-control"
                                 required>{{isset($product) ? $product->description : ''}}</textarea>
                         </div>
+                        @empty($product)
                         <div class="form-group">
                             <label>Image</label>
                             <input type="file" accept="image/*" name="image[]" multiple>
                         </div>
+                        @endempty
                         <div class="text-right">
                             <input type="submit" class="btn btn-primary" value="Submit">
                         </div>
