@@ -30,9 +30,16 @@
                         <td>{{$benefit->description}}</td>
                         <td><img src="{{$benefit->image}}" class="img-fluid" style="height: 100px" alt=""></td>
                         <td>
-                            <a href="{{route('benefits.edit', $benefit->id)}}" class="badge badge-warning">
+                            <a href="{{route('benefits.edit', $benefit->id)}}" class="btn btn-warning">
                                 Edit
                             </a>
+                            <form action="{{route('benefits.destroy', $benefit->id)}}" method="POST" class="d-inline">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure?')">
+                                    Delete
+                                </button>
+                            </form>
                         </td>
                     </tr>
                     @endforeach

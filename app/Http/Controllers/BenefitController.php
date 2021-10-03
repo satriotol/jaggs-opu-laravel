@@ -96,8 +96,11 @@ class BenefitController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Benefit $benefit)
     {
-        //
+        $benefit->deleteImage();
+        $benefit->delete();
+        session()->flash('success');
+        return back();
     }
 }

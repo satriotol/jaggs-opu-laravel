@@ -67,7 +67,7 @@
     <script>
         iziToast.success({
                 title: 'OK',
-                message: 'Successfully inserted record!',
+                message: 'Successfully',
             });
     </script>
     @endif
