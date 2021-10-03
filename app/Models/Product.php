@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Storage;
 
 class Product extends Model
 {
@@ -12,6 +13,12 @@ class Product extends Model
 
     public function product_image()
     {
-        return $this->belongsToMany(ProductImage::class);
+        return $this->hasMany(ProductImage::class, 'product_id', 'id');
+    }
+    public function deleteImage()
+    {
+        foreach ($this->product_image() as $image) {
+            Storage::disk('public')->delete($image->attributes['image']);
+        }
     }
 }

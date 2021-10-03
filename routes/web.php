@@ -3,6 +3,7 @@
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\BenefitController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProductImageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,6 +22,7 @@ Route::middleware(['auth'])->group(function () {
         'abouts'    => AboutController::class,
         'benefits'  => BenefitController::class,
         'products'  => ProductController::class,
+        'productImage'  => ProductImageController::class,
     ]);
 });
 

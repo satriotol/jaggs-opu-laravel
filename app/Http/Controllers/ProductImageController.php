@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\Product\CreateProductRequest;
-use App\Models\Product;
+use App\Http\Requests\Product\CreateProductImageRequest;
 use App\Models\ProductImage;
 use Illuminate\Http\Request;
 
-class ProductController extends Controller
+class ProductImageController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +15,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::all();
-        return view('product.index', compact('products'));
+        //
     }
 
     /**
@@ -27,7 +25,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('product.create');
+        //
     }
 
     /**
@@ -36,21 +34,16 @@ class ProductController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(CreateProductRequest $request)
+    public function store(CreateProductImageRequest $request)
     {
         $data = $request->all();
-        $product = Product::create($data);
-        foreach ($request->file('image') as $image) {
-            $image_upload = $image->store('image', 'public');
-            ProductImage::create([
-                'product_id'    => $product->id,
-                'image'         => $image_upload
-
-            ]);
-        }
-
+        if ($request->hasFile('image')) {
+            $image = $request->image->store('image', 'public');
+            $data['image'] = $image;
+        };
+        ProductImage::create($data);
         session()->flash('success');
-        return redirect(route('products.index'));
+        return back();
     }
 
     /**
@@ -70,9 +63,9 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Product $product)
+    public function edit($id)
     {
-        return view('product.create', compact('product'));
+        //
     }
 
     /**
@@ -82,12 +75,9 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(CreateProductRequest $request, Product $product)
+    public function update(Request $request, $id)
     {
-        $data = $request->all();
-        $product->update($data);
-        session()->flash('success');
-        return redirect(route('products.index'));
+        //
     }
 
     /**
@@ -96,14 +86,11 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Product $product)
+    public function destroy(ProductImage $productImage)
     {
-        foreach ($product->product_image as $image) {
-            $image->deleteImage();
-            $image->delete();
-        }
-        $product->delete();
+        $productImage->deleteImage();
+        $productImage->delete();
         session()->flash('success');
-        return redirect(route('products.index'));
+        return back();
     }
 }
