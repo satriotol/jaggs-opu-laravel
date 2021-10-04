@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\About;
+use App\Models\Location;
 use Illuminate\Database\Seeder;
 
 class AboutSeeder extends Seeder
@@ -18,6 +19,11 @@ class AboutSeeder extends Seeder
             'description'   => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, doloremque.',
             'link'          => 'google.com',
             'vision'        => 'Lorem ipsum dolor sit amet.',
+        ]);
+
+        Location::create([
+            'address'       => 'Test',
+            'image'       => '1',
         ]);
     }
 }

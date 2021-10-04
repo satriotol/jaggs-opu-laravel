@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\BenefitController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\LocationController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProductImageController;
 use Illuminate\Support\Facades\Route;
@@ -18,11 +20,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::middleware(['auth'])->group(function () {
+    Route::get('/', [DashboardController::class, 'index']);
     Route::resources([
         'abouts'    => AboutController::class,
         'benefits'  => BenefitController::class,
         'products'  => ProductController::class,
         'productImage'  => ProductImageController::class,
+        'location'  => LocationController::class,
     ]);
 });
 
