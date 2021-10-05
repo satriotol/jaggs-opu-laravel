@@ -38,6 +38,12 @@
                     <span>Slider</span>
                 </a>
             </li>
+            <li class="{{Request::routeIs('site_plan.*') ? 'active' : ''}}">
+                <a class="nav-link " href=" {{route('site_plan.index')}}">
+                    <i class="far fa-square"></i>
+                    <span>Site Plan</span>
+                </a>
+            </li>
         </ul>
     </aside>
 </div>
