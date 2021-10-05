@@ -6,6 +6,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LocationController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProductImageController;
+use App\Http\Controllers\SliderController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,6 +28,7 @@ Route::middleware(['auth'])->group(function () {
         'products'  => ProductController::class,
         'productImage'  => ProductImageController::class,
         'location'  => LocationController::class,
+        'slider'  => SliderController::class,
     ]);
 });
 

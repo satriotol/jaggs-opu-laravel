@@ -32,6 +32,12 @@
                     <span>Location</span>
                 </a>
             </li>
+            <li class="{{Request::routeIs('slider.*') ? 'active' : ''}}">
+                <a class="nav-link " href=" {{route('slider.index')}}">
+                    <i class="far fa-square"></i>
+                    <span>Slider</span>
+                </a>
+            </li>
         </ul>
     </aside>
 </div>
