@@ -10,37 +10,37 @@
             <li class="menu-header">Dashboard</li>
             <li class="{{Request::routeIs('abouts.*') ? 'active' : ''}}">
                 <a class="nav-link " href=" {{route('abouts.index')}}">
-                    <i class="far fa-square"></i>
+                    <i class="fas fa-address-card"></i>
                     <span>About</span>
                 </a>
             </li>
             <li class="{{Request::routeIs('benefits.*') ? 'active' : ''}}">
                 <a class="nav-link " href=" {{route('benefits.index')}}">
-                    <i class="far fa-square"></i>
+                    <i class="fas fa-plus"></i>
                     <span>Benefit</span>
                 </a>
             </li>
             <li class="{{Request::routeIs('products.*') ? 'active' : ''}}">
                 <a class="nav-link " href=" {{route('products.index')}}">
-                    <i class="far fa-square"></i>
+                    <i class="fas fa-home"></i>
                     <span>Product</span>
                 </a>
             </li>
             <li class="{{Request::routeIs('location.*') ? 'active' : ''}}">
                 <a class="nav-link " href=" {{route('location.index')}}">
-                    <i class="far fa-square"></i>
+                    <i class="fas fa-map-marker-alt"></i>
                     <span>Location</span>
                 </a>
             </li>
             <li class="{{Request::routeIs('slider.*') ? 'active' : ''}}">
                 <a class="nav-link " href=" {{route('slider.index')}}">
-                    <i class="far fa-square"></i>
+                    <i class="fas fa-images"></i>
                     <span>Slider</span>
                 </a>
             </li>
             <li class="{{Request::routeIs('site_plan.*') ? 'active' : ''}}">
                 <a class="nav-link " href=" {{route('site_plan.index')}}">
-                    <i class="far fa-square"></i>
+                    <i class="far fa-map"></i>
                     <span>Site Plan</span>
                 </a>
             </li>
