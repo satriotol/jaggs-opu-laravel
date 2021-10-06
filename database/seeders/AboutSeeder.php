@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\About;
+use App\Models\Contact;
 use App\Models\Location;
 use Illuminate\Database\Seeder;
 
@@ -24,6 +25,10 @@ class AboutSeeder extends Seeder
         Location::create([
             'address'       => 'Test',
             'image'       => '1',
+        ]);
+        Contact::create([
+            'address'       => 'Test',
+            'email'       => '1',
         ]);
     }
 }

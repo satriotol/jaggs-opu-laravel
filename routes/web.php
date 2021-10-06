@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\BenefitController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LocationController;
 use App\Http\Controllers\PhoneController;
@@ -35,6 +36,7 @@ Route::middleware(['auth'])->group(function () {
         'site_plan'  => SitePlanController::class,
         'social_media'  => SocialMediaController::class,
         'phone'  => PhoneController::class,
+        'contact'  => ContactController::class,
     ]);
 });
 
