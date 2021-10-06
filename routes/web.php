@@ -11,6 +11,7 @@ use App\Http\Controllers\ProductImageController;
 use App\Http\Controllers\SitePlanController;
 use App\Http\Controllers\SliderController;
 use App\Http\Controllers\SocialMediaController;
+use App\Http\Controllers\WhatsappController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -37,6 +38,7 @@ Route::middleware(['auth'])->group(function () {
         'social_media'  => SocialMediaController::class,
         'phone'  => PhoneController::class,
         'contact'  => ContactController::class,
+        'whatsapp'  => WhatsappController::class,
     ]);
 });
 

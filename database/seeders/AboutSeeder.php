@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\About;
 use App\Models\Contact;
 use App\Models\Location;
+use App\Models\Whatsapp;
 use Illuminate\Database\Seeder;
 
 class AboutSeeder extends Seeder
@@ -29,6 +30,10 @@ class AboutSeeder extends Seeder
         Contact::create([
             'address'       => 'Test',
             'email'       => '1',
+        ]);
+        Whatsapp::create([
+            'phone_number'       => 'Test',
+            'message'       => '1',
         ]);
     }
 }

@@ -52,7 +52,7 @@
             </li>
             <li class="{{Request::routeIs('contact.*') ? 'active' : ''}}">
                 <a class="nav-link " href=" {{route('contact.index')}}">
-                    <i class="fas fa-phone"></i>
+                    <i class="fas fa-id-card-alt"></i>
                     <span>Contact</span>
                 </a>
             </li>
@@ -60,6 +60,12 @@
                 <a class="nav-link " href=" {{route('phone.index')}}">
                     <i class="fas fa-phone"></i>
                     <span>Phone</span>
+                </a>
+            </li>
+            <li class="{{Request::routeIs('whatsapp.*') ? 'active' : ''}}">
+                <a class="nav-link " href=" {{route('whatsapp.index')}}">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>Whatsapp</span>
                 </a>
             </li>
         </ul>
