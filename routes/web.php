@@ -4,6 +4,7 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\BenefitController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LocationController;
+use App\Http\Controllers\PhoneController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProductImageController;
 use App\Http\Controllers\SitePlanController;
@@ -33,6 +34,7 @@ Route::middleware(['auth'])->group(function () {
         'slider'  => SliderController::class,
         'site_plan'  => SitePlanController::class,
         'social_media'  => SocialMediaController::class,
+        'phone'  => PhoneController::class,
     ]);
 });
 

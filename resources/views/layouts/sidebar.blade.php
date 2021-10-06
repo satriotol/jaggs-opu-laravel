@@ -50,6 +50,12 @@
                     <span>Social Media</span>
                 </a>
             </li>
+            <li class="{{Request::routeIs('phone.*') ? 'active' : ''}}">
+                <a class="nav-link " href=" {{route('phone.index')}}">
+                    <i class="fas fa-phone"></i>
+                    <span>Phone</span>
+                </a>
+            </li>
         </ul>
     </aside>
 </div>
