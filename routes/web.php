@@ -8,6 +8,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProductImageController;
 use App\Http\Controllers\SitePlanController;
 use App\Http\Controllers\SliderController;
+use App\Http\Controllers\SocialMediaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,6 +32,7 @@ Route::middleware(['auth'])->group(function () {
         'location'  => LocationController::class,
         'slider'  => SliderController::class,
         'site_plan'  => SitePlanController::class,
+        'social_media'  => SocialMediaController::class,
     ]);
 });
 

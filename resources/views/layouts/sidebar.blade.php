@@ -44,6 +44,12 @@
                     <span>Site Plan</span>
                 </a>
             </li>
+            <li class="{{Request::routeIs('social_media.*') ? 'active' : ''}}">
+                <a class="nav-link " href=" {{route('social_media.index')}}">
+                    <i class="far fa-comment-alt"></i>
+                    <span>Social Media</span>
+                </a>
+            </li>
         </ul>
     </aside>
 </div>
