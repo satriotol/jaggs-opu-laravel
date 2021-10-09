@@ -5,8 +5,10 @@ namespace Database\Seeders;
 use App\Models\About;
 use App\Models\Contact;
 use App\Models\Location;
+use App\Models\User;
 use App\Models\Whatsapp;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 class AboutSeeder extends Seeder
 {
@@ -17,6 +19,11 @@ class AboutSeeder extends Seeder
      */
     public function run()
     {
+        User::create([
+            'name'      => 'admin',
+            'email'     => 'admin@admin.com',
+            'password'  => Hash::make('admin')
+        ]);
         About::create([
             'description'   => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, doloremque.',
             'link'          => 'google.com',
