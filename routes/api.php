@@ -5,6 +5,7 @@ use App\Http\Controllers\Api\BenefitController;
 use App\Http\Controllers\Api\ContactController;
 use App\Http\Controllers\Api\LocationController;
 use App\Http\Controllers\Api\ProductController;
+use App\Http\Controllers\Api\SliderController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -27,3 +28,4 @@ Route::get('benefit', [BenefitController::class, 'index']);
 Route::get('product', [ProductController::class, 'index']);
 Route::get('contact', [ContactController::class, 'index']);
 Route::get('location', [LocationController::class, 'index']);
+Route::get('slider', [SliderController::class, 'index']);
