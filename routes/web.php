@@ -4,6 +4,7 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\BenefitController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\FacilityController;
 use App\Http\Controllers\LocationController;
 use App\Http\Controllers\PhoneController;
 use App\Http\Controllers\ProductController;
@@ -39,6 +40,7 @@ Route::middleware(['auth'])->group(function () {
         'phone'  => PhoneController::class,
         'contact'  => ContactController::class,
         'whatsapp'  => WhatsappController::class,
+        'facility'  => FacilityController::class,
     ]);
 });
 

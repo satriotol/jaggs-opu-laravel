@@ -26,6 +26,12 @@
                     <span>Product</span>
                 </a>
             </li>
+            <li class="{{Request::routeIs('facility.*') ? 'active' : ''}}">
+                <a class="nav-link " href=" {{route('facility.index')}}">
+                    <i class="fas fa-plus"></i>
+                    <span>Facility</span>
+                </a>
+            </li>
             <li class="{{Request::routeIs('location.*') ? 'active' : ''}}">
                 <a class="nav-link " href=" {{route('location.index')}}">
                     <i class="fas fa-map-marker-alt"></i>
