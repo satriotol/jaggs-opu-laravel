@@ -23,7 +23,8 @@
                         @endisset
                         <div class="form-group">
                             <label>Title</label>
-                            <input type="text" name="title" value="{{$facility->title}}" class="form-control">
+                            <input type="text" name="title" value="{{isset($facility) ? $facility->title : ''}}"
+                                class="form-control">
                         </div>
                         <div class="form-group">
                             <label>Image</label>
