@@ -7,6 +7,7 @@ use App\Http\Controllers\Api\LocationController;
 use App\Http\Controllers\Api\ProductController;
 use App\Http\Controllers\Api\SitePlanController;
 use App\Http\Controllers\Api\SliderController;
+use App\Http\Controllers\Api\SocialMediaController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -31,3 +32,4 @@ Route::get('contact', [ContactController::class, 'index']);
 Route::get('location', [LocationController::class, 'index']);
 Route::get('slider', [SliderController::class, 'index']);
 Route::get('site_plan', [SitePlanController::class, 'index']);
+Route::get('social_media', [SocialMediaController::class, 'index']);
