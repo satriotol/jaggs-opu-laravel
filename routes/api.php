@@ -3,6 +3,7 @@
 use App\Http\Controllers\Api\AboutController;
 use App\Http\Controllers\Api\BenefitController;
 use App\Http\Controllers\Api\ContactController;
+use App\Http\Controllers\Api\FacilityController;
 use App\Http\Controllers\Api\LocationController;
 use App\Http\Controllers\Api\PhoneController;
 use App\Http\Controllers\Api\ProductController;
@@ -37,3 +38,4 @@ Route::get('site_plan', [SitePlanController::class, 'index']);
 Route::get('social_media', [SocialMediaController::class, 'index']);
 Route::get('phone', [PhoneController::class, 'index']);
 Route::get('whatsapp', [WhatsappController::class, 'index']);
+Route::get('facility', [FacilityController::class, 'index']);
