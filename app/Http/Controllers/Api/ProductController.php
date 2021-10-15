@@ -2,8 +2,6 @@
 
 namespace App\Http\Controllers\Api;
 
-use File;
-use App\Http\Controllers\API\ResponseFormatter;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\ProductNameResource;
 use App\Http\Resources\ProductResource;
