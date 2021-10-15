@@ -31,6 +31,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('about', [AboutController::class, 'index']);
 Route::get('benefit', [BenefitController::class, 'index']);
 Route::get('product', [ProductController::class, 'index']);
+Route::get('product_name', [ProductController::class, 'getName']);
 Route::get('contact', [ContactController::class, 'index']);
 Route::get('location', [LocationController::class, 'index']);
 Route::get('slider', [SliderController::class, 'index']);
