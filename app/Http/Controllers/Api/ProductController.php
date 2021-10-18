@@ -21,7 +21,13 @@ class ProductController extends Controller
     }
     public function index(Request $request)
     {
-        $data = Product::where('id', $request->id)->get();
+        $search = $request->id;
+
+        if ($search) {
+            $data = Product::where('id', $search)->get();
+        } else {
+            $data = Product::inRandomOrder()->first();
+        }
         if ($data) {
             return ResponseFormatter::success(ProductResource::collection($data), 'Data Berhasil Didapatkan');
         } else {
