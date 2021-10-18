@@ -25,7 +25,7 @@ class CreateAboutRequest extends FormRequest
     {
         return [
             'description'   => 'required',
-            'link'          => 'required|active_url',
+            'link'          => 'required',
             'vision'        => 'required',
         ];
     }
