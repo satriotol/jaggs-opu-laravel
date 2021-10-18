@@ -26,7 +26,7 @@ class ProductController extends Controller
         if ($search) {
             $data = Product::where('id', $search)->get();
         } else {
-            $data = Product::all()->first();
+            $data = Product::orderBy('id', 'desc')->first();
         }
         if ($data) {
             return ResponseFormatter::success(ProductResource::collection($data), 'Data Berhasil Didapatkan');
