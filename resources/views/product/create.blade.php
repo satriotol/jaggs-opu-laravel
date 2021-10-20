@@ -33,7 +33,7 @@
                         </div>
                         <div class="form-group">
                             <label>Description</label>
-                            <textarea name="description" class="form-control"
+                            <textarea name="description" class="form-control" id="summernote"
                                 required>{{isset($product) ? $product->description : ''}}</textarea>
                         </div>
                         @empty($product)
@@ -115,4 +115,15 @@
 </div>
 @endsection
 @push('js')
+<script>
+    $(document).ready(function () {
+        $('#summernote').summernote({
+            toolbar: [
+                ['font', ['bold', 'underline', 'clear']],
+                ['para', ['ul', 'ol']],
+                ['view', ['fullscreen']]
+            ]
+        });
+    });
+</script>
 @endpush
